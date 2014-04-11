@@ -1,0 +1,40 @@
+// Esstischplatte_kurz genrated by blender2ogre 0.6.0
+
+material Esstischplatte_kurz 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Esstischplatte_kurz
+        {
+            ambient 0.800000011920929 0.20643925666809082 0.03162970766425133 1.0
+            diffuse 0.6400000190734865 0.16515140779542037 0.02530376650845656 1.0
+            specular 0.1 0.1 0.1 1.0 2.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+        texture_unit {
+
+            texture wood2.jpg
+            //colour_op_ex add src_texture src_current
+      
+        }
+        }
+    }
+}

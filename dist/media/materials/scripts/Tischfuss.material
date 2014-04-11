@@ -1,0 +1,39 @@
+// Tischfuss genrated by blender2ogre 0.6.0
+
+material Tischfuss 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Tischfuss
+        {
+            ambient 0.4019675850868225 0.3952893018722534 0.38998323678970337 1.0
+            diffuse 0.32157407286128503 0.3162314462100184 0.31198659408072515 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+             texture_unit{
+            texture wood3.jpg
+                //colour_op_ex add_smooth src_texture src_current
+        }
+        }
+    }
+}
