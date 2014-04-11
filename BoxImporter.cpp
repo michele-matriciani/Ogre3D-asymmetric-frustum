@@ -140,8 +140,8 @@ void BoxImporter::createFrameListener(void)
     yCam = 480;
 
     ar      = yScreen/xScreen; 
-    xr      = 4;//xScreen/xCam;
-    yr      = 3;//yScreen/yCam;
+    xr      = xScreen/xCam;
+    yr      = yScreen/yCam;
 
     width = 8;
     height = width*ar;
@@ -225,15 +225,12 @@ bool BoxImporter::frameRenderingQueued(const Ogre::FrameEvent& evt)
     Ogre::Real provaY = flY->getLast();
     Ogre::Real provaZ = flZ->getLast();
 
-    Ogre::Real c = 1500.0f/nP;
-    Ogre::Real d = c/30.0f;
-
-    Ogre::Real z = (Ogre::Real)provaZ / 1000/*c*/ ;
-    std::cout << "Z = "<< z << "C = "<< c <<std::endl;
+    Ogre::Real z = (Ogre::Real)provaZ / 200 ;
+    
     // con -320.0f non e' allineato
-    Ogre::Real x = -((( (Ogre::Real)(provaX) - 320.0f ) / 15.0f /* (d*z)*/ ) / xr);//(xr*ar));
+    Ogre::Real x = -((( (Ogre::Real)(provaX) - 320.0f ) / 15.0f  ) /(xr*ar));
 
-    Ogre::Real y = -((( (Ogre::Real)(provaY) - 160.0f ) / 15.0f /* (d*z)*/ ) / yr);//(yr*ar));
+    Ogre::Real y = -((( (Ogre::Real)(provaY) - 160.0f ) / 15.0f  ) /(yr*ar));
     
     eye.x = x;
     eye.y = y;
