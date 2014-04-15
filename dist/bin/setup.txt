@@ -1,0 +1,19 @@
+[Scene]
+leftCoordinate = -8
+rightCoordinate = 8
+upperCoordinate = 9
+lowerCoordinate = 0
+beginCoordinate = 2
+endCoordinate = 12
+
+defaultNearPlane = 11
+sceneName = living-room.scene
+ 
+[Light]
+defaultLight = true
+diffuseColor = 1.0 1.0 1.0
+specularColor = 1.0 1.0 1.0
+
+[WebcamResolution]
+width = 640
+height = 480

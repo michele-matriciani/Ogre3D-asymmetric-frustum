@@ -115,6 +115,8 @@ set(HDRS
 	/home/michele/workspace/progettoOpencv/src/face.h
 	./Filter.h
 	./FluidFilter.h
+	./Setup.h
+	./MyConfig.h
 )
  
 set(SRCS
@@ -127,6 +129,8 @@ set(SRCS
 	tinyxml/tinyxmlparser.cpp
 	./Filter.cpp
 	./FluidFilter.cpp
+	./Setup.cpp
+	./MyConfig.cpp
 )
  
 include_directories( ${OIS_INCLUDE_DIRS}
@@ -229,6 +233,7 @@ if(UNIX)
  
 	install(FILES ${CMAKE_SOURCE_DIR}/dist/bin/plugins.cfg
 		${CMAKE_SOURCE_DIR}/dist/bin/resources.cfg
+		${CMAKE_SOURCE_DIR}/dist/bin/setup.txt
 		DESTINATION bin
 		CONFIGURATIONS Release RelWithDebInfo Debug
 	)

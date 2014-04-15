@@ -12,7 +12,7 @@ Filter::Filter()
 
 
 
-bool Filter::filter(Ogre::Vector2 &cVec, int erMin, int erMax,int gap) {
+bool Filter::filter(Ogre::Vector2 &cVec, int erMin, int erMax) {
 	int coord = cVec.x;
 	int p	  = cVec.y;
 
@@ -22,33 +22,14 @@ bool Filter::filter(Ogre::Vector2 &cVec, int erMin, int erMax,int gap) {
 	}
 
 	int dif = abs( coord - p );
-    //int dif = ( coord - p );
+    
 
-	if ( ( dif <= erMin )  ) { 
-    	
-		coord = p;    
-    	
+	if ( dif <= erMin ) {   	
+		cVec.x = p;     	
     }
-    /*
-    else if ( dif >= -erMax && dif <= erMax )  {
-
-    	if ( dif < 0 ) {
-    		coord = p - gap;
-    	}
-    	else {
-    		coord = p + gap;
-    	}
-    	//p = coord;
-    	
-
-    }  */
     else {
-    	p = coord;
-    	
+    	cVec.y = coord;	
     }  
-
-    cVec.x = coord;
-    cVec.y= p;
 
     return true;
 

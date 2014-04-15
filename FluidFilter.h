@@ -5,15 +5,15 @@
 
  	class FluidFilter {
  		public:
- 			FluidFilter(int,int,int);
+ 			FluidFilter(int,int);
 
- 			bool interpolate(int);
- 			Ogre::Real getLast();
- 			void init(int);
+ 			Ogre::Real interpolate(Ogre::Real);
+ 			
 
  		private:
- 			int n;
- 			int m;
- 			std::queue<Ogre::Real> q;
+ 			int n,count,lastR;
+ 			Ogre::Real gap,last;
+ 			
+ 			
  	};
  

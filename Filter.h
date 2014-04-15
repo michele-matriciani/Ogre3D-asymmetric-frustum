@@ -7,7 +7,7 @@
  		public:
  			Filter();
 
- 			bool filter( Ogre::Vector2 &coord ,int erMin, int erMax,int gap);
+ 			bool filter( Ogre::Vector2 &coord ,int erMin, int erMax);
 
 
  		private:
