@@ -8,7 +8,7 @@ FluidFilter::FluidFilter(int step,int begin):
     gap   (begin),
     count (0),
     last  (begin),
-    lastR (begin)
+    lastCoord (begin)
 
 { 
 }
@@ -18,9 +18,10 @@ Ogre::Real FluidFilter::interpolate(Ogre::Real c) {
     // std::cout << last << " , " << c 
     // << " , " << lastR << " , " << gap << std::endl; 
  
-    if ( lastR == c ) {
+    if ( lastCoord == c ) {
 
         if (count == 1) {
+            std::cout << "CIAO" << std::endl;
             count--;
             last = c;
         }
@@ -32,7 +33,7 @@ Ogre::Real FluidFilter::interpolate(Ogre::Real c) {
 
     else {
 
-        lastR = c;
+        lastCoord = c;
         count = n;
         gap   =  ( c - last ) / n ;
         last += gap;

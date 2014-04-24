@@ -174,19 +174,24 @@ bool BoxImporter::frameRenderingQueued(const Ogre::FrameEvent& evt)
     mMouse->capture();
     mTrayMgr->frameRenderingQueued(evt);
 
-    int coordX,coordY,coordZ;
+   
     
     Ogre::Real x,y,z;
-    getFaceCoord( &coordX, &coordY, &coordZ );
+    int coordX = 0 ,coordY = 0,coordZ = 0;
+    if (!getFaceCoord( &coordX, &coordY, &coordZ ) ) {
+        x = flX->interpolate(prevX);
+        y = flY->interpolate(prevY);
+        z = flZ->interpolate(prevZ);
+    }
     
-    if (coordX != 0 && coordY != 0 && coordZ != 0) {
+    else if (coordX != 0 && coordY != 0 && coordZ != 0) {
         Ogre::Vector2 fX = Ogre::Vector2( coordX, prevX );
         Ogre::Vector2 fY = Ogre::Vector2( coordY, prevY );
         Ogre::Vector2 fZ = Ogre::Vector2( coordZ, prevZ );
 
-        filter.filter(fX,7,1);
-        filter.filter(fY,6,1);
-        filter.filter(fZ,10,5);
+        filter.filter(fX,7,35);
+        filter.filter(fY,6,35);
+        filter.filter(fZ,10,25);
         
 
 

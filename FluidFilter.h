@@ -11,7 +11,7 @@
  			
 
  		private:
- 			int n,count,lastR;
+ 			int n,count,lastCoord;
  			Ogre::Real gap,last;
  			
  			
